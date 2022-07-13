@@ -11,7 +11,7 @@ import SwiftUI
 struct TelarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

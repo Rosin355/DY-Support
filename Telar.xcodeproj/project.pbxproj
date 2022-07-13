@@ -8,18 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		CD68F52F287F56CB001781DB /* TelarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F52E287F56CB001781DB /* TelarApp.swift */; };
-		CD68F531287F56CB001781DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F530287F56CB001781DB /* ContentView.swift */; };
+		CD68F531287F56CB001781DB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F530287F56CB001781DB /* RootView.swift */; };
 		CD68F533287F56CD001781DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD68F532287F56CD001781DB /* Assets.xcassets */; };
 		CD68F537287F56CD001781DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD68F536287F56CD001781DB /* Preview Assets.xcassets */; };
+		CD68F546287F5B59001781DB /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F543287F5B58001781DB /* LexendDeca-Bold.ttf */; };
+		CD68F547287F5B59001781DB /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F544287F5B59001781DB /* LexendDeca-SemiBold.ttf */; };
+		CD68F548287F5B59001781DB /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */; };
+		CD68F54B287F5E0B001781DB /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F54A287F5E0B001781DB /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CD68F52B287F56CB001781DB /* Telar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD68F52E287F56CB001781DB /* TelarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelarApp.swift; sourceTree = "<group>"; };
-		CD68F530287F56CB001781DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CD68F530287F56CB001781DB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CD68F532287F56CD001781DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD68F534287F56CD001781DB /* Telar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Telar.entitlements; sourceTree = "<group>"; };
 		CD68F536287F56CD001781DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD68F543287F5B58001781DB /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
+		CD68F544287F5B59001781DB /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
+		CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
+		CD68F549287F5C38001781DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CD68F54A287F5E0B001781DB /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +61,14 @@
 		CD68F52D287F56CB001781DB /* Telar */ = {
 			isa = PBXGroup;
 			children = (
+				CD68F549287F5C38001781DB /* Info.plist */,
+				CD68F53D287F574A001781DB /* Views */,
+				CD68F53E287F5752001781DB /* View Models */,
+				CD68F53F287F576E001781DB /* Models */,
+				CD68F541287F577F001781DB /* Helpers */,
+				CD68F540287F5775001781DB /* Services */,
+				CD68F542287F5786001781DB /* Fonts */,
 				CD68F52E287F56CB001781DB /* TelarApp.swift */,
-				CD68F530287F56CB001781DB /* ContentView.swift */,
 				CD68F532287F56CD001781DB /* Assets.xcassets */,
 				CD68F534287F56CD001781DB /* Telar.entitlements */,
 				CD68F535287F56CD001781DB /* Preview Content */,
@@ -67,6 +82,53 @@
 				CD68F536287F56CD001781DB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD68F53D287F574A001781DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD68F530287F56CB001781DB /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD68F53E287F5752001781DB /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		CD68F53F287F576E001781DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD68F540287F5775001781DB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CD68F541287F577F001781DB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD68F54A287F5E0B001781DB /* Fonts.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD68F542287F5786001781DB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD68F543287F5B58001781DB /* LexendDeca-Bold.ttf */,
+				CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */,
+				CD68F544287F5B59001781DB /* LexendDeca-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,8 +189,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD68F548287F5B59001781DB /* LexendDeca-Regular.ttf in Resources */,
+				CD68F547287F5B59001781DB /* LexendDeca-SemiBold.ttf in Resources */,
 				CD68F537287F56CD001781DB /* Preview Assets.xcassets in Resources */,
 				CD68F533287F56CD001781DB /* Assets.xcassets in Resources */,
+				CD68F546287F5B59001781DB /* LexendDeca-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD68F531287F56CB001781DB /* ContentView.swift in Sources */,
+				CD68F531287F56CB001781DB /* RootView.swift in Sources */,
+				CD68F54B287F5E0B001781DB /* Fonts.swift in Sources */,
 				CD68F52F287F56CB001781DB /* TelarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,14 +335,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Telar/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -305,14 +372,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Telar/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
