@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+
 @main
 struct TelarApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             RootView()
+            
         }
     }
 }

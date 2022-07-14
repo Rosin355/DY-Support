@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD5A14A5288596F500EA2C61 /* CreateProfileTextfieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A14A4288596F500EA2C61 /* CreateProfileTextfieldStyle.swift */; };
 		CD68F52F287F56CB001781DB /* TelarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F52E287F56CB001781DB /* TelarApp.swift */; };
 		CD68F531287F56CB001781DB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F530287F56CB001781DB /* RootView.swift */; };
 		CD68F533287F56CD001781DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD68F532287F56CD001781DB /* Assets.xcassets */; };
@@ -15,9 +16,28 @@
 		CD68F547287F5B59001781DB /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F544287F5B59001781DB /* LexendDeca-SemiBold.ttf */; };
 		CD68F548287F5B59001781DB /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */; };
 		CD68F54B287F5E0B001781DB /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F54A287F5E0B001781DB /* Fonts.swift */; };
+		CDA05DF12881A4D2000CF80B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF02881A4D2000CF80B /* WelcomeView.swift */; };
+		CDA05DF32881A4E0000CF80B /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF22881A4E0000CF80B /* PhoneNumberView.swift */; };
+		CDA05DF52881A4EA000CF80B /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF42881A4EA000CF80B /* VerificationView.swift */; };
+		CDA05DF72881A4F9000CF80B /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF62881A4F9000CF80B /* CreateProfileView.swift */; };
+		CDA05DF92881A50B000CF80B /* SyncContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF82881A50B000CF80B /* SyncContactView.swift */; };
+		CDA05DFB2881ABB4000CF80B /* OnboardingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DFA2881ABB4000CF80B /* OnboardingButtonStyle.swift */; };
+		CDAB7615288D4D6300056A23 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB7614288D4D6300056A23 /* ContactsViewModel.swift */; };
+		CDB12F842880508B00159B4D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F832880508B00159B4D /* CustomTabBar.swift */; };
+		CDB12F862880565C00159B4D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F852880565C00159B4D /* TabBarButton.swift */; };
+		CDB12F8828805E3600159B4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDB12F8728805E3600159B4D /* GoogleService-Info.plist */; };
+		CDB12F8B28805F6900159B4D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CDB12F8A28805F6900159B4D /* FirebaseAnalytics */; };
+		CDB12F8D28805F6900159B4D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CDB12F8C28805F6900159B4D /* FirebaseAuth */; };
+		CDB12F8F28805F6900159B4D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CDB12F8E28805F6900159B4D /* FirebaseFirestore */; };
+		CDB12F9128805F6900159B4D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CDB12F9028805F6900159B4D /* FirebaseFirestoreSwift */; };
+		CDB12F9328805F6900159B4D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CDB12F9228805F6900159B4D /* FirebaseStorage */; };
+		CDB12F952880625600159B4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F942880625600159B4D /* AppDelegate.swift */; };
+		CDB12F972880A99A00159B4D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F962880A99A00159B4D /* AuthViewModel.swift */; };
+		CDB12F9A2880B10900159B4D /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F992880B10900159B4D /* OnboardingContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD5A14A4288596F500EA2C61 /* CreateProfileTextfieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTextfieldStyle.swift; sourceTree = "<group>"; };
 		CD68F52B287F56CB001781DB /* Telar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD68F52E287F56CB001781DB /* TelarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelarApp.swift; sourceTree = "<group>"; };
 		CD68F530287F56CB001781DB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -29,6 +49,19 @@
 		CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		CD68F549287F5C38001781DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CD68F54A287F5E0B001781DB /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		CDA05DF02881A4D2000CF80B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		CDA05DF22881A4E0000CF80B /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		CDA05DF42881A4EA000CF80B /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		CDA05DF62881A4F9000CF80B /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
+		CDA05DF82881A50B000CF80B /* SyncContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContactView.swift; sourceTree = "<group>"; };
+		CDA05DFA2881ABB4000CF80B /* OnboardingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonStyle.swift; sourceTree = "<group>"; };
+		CDAB7614288D4D6300056A23 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		CDB12F832880508B00159B4D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		CDB12F852880565C00159B4D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		CDB12F8728805E3600159B4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDB12F942880625600159B4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDB12F962880A99A00159B4D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CDB12F992880B10900159B4D /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +69,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB12F8B28805F6900159B4D /* FirebaseAnalytics in Frameworks */,
+				CDB12F8D28805F6900159B4D /* FirebaseAuth in Frameworks */,
+				CDB12F8F28805F6900159B4D /* FirebaseFirestore in Frameworks */,
+				CDB12F9328805F6900159B4D /* FirebaseStorage in Frameworks */,
+				CDB12F9128805F6900159B4D /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,14 +99,16 @@
 		CD68F52D287F56CB001781DB /* Telar */ = {
 			isa = PBXGroup;
 			children = (
+				CDB12F8728805E3600159B4D /* GoogleService-Info.plist */,
 				CD68F549287F5C38001781DB /* Info.plist */,
+				CDB12F942880625600159B4D /* AppDelegate.swift */,
+				CD68F52E287F56CB001781DB /* TelarApp.swift */,
 				CD68F53D287F574A001781DB /* Views */,
 				CD68F53E287F5752001781DB /* View Models */,
 				CD68F53F287F576E001781DB /* Models */,
 				CD68F541287F577F001781DB /* Helpers */,
 				CD68F540287F5775001781DB /* Services */,
 				CD68F542287F5786001781DB /* Fonts */,
-				CD68F52E287F56CB001781DB /* TelarApp.swift */,
 				CD68F532287F56CD001781DB /* Assets.xcassets */,
 				CD68F534287F56CD001781DB /* Telar.entitlements */,
 				CD68F535287F56CD001781DB /* Preview Content */,
@@ -87,7 +127,9 @@
 		CD68F53D287F574A001781DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CDB12F982880B0C700159B4D /* Onboarding */,
 				CD68F530287F56CB001781DB /* RootView.swift */,
+				CDB12F822880504700159B4D /* Custom TabBar */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +137,8 @@
 		CD68F53E287F5752001781DB /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				CDB12F962880A99A00159B4D /* AuthViewModel.swift */,
+				CDAB7614288D4D6300056A23 /* ContactsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -117,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				CD68F54A287F5E0B001781DB /* Fonts.swift */,
+				CDA05DFA2881ABB4000CF80B /* OnboardingButtonStyle.swift */,
+				CD5A14A4288596F500EA2C61 /* CreateProfileTextfieldStyle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -129,6 +175,28 @@
 				CD68F544287F5B59001781DB /* LexendDeca-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CDB12F822880504700159B4D /* Custom TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CDB12F832880508B00159B4D /* CustomTabBar.swift */,
+				CDB12F852880565C00159B4D /* TabBarButton.swift */,
+			);
+			path = "Custom TabBar";
+			sourceTree = "<group>";
+		};
+		CDB12F982880B0C700159B4D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CDB12F992880B10900159B4D /* OnboardingContainerView.swift */,
+				CDA05DF02881A4D2000CF80B /* WelcomeView.swift */,
+				CDA05DF22881A4E0000CF80B /* PhoneNumberView.swift */,
+				CDA05DF42881A4EA000CF80B /* VerificationView.swift */,
+				CDA05DF62881A4F9000CF80B /* CreateProfileView.swift */,
+				CDA05DF82881A50B000CF80B /* SyncContactView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +215,13 @@
 			dependencies = (
 			);
 			name = Telar;
+			packageProductDependencies = (
+				CDB12F8A28805F6900159B4D /* FirebaseAnalytics */,
+				CDB12F8C28805F6900159B4D /* FirebaseAuth */,
+				CDB12F8E28805F6900159B4D /* FirebaseFirestore */,
+				CDB12F9028805F6900159B4D /* FirebaseFirestoreSwift */,
+				CDB12F9228805F6900159B4D /* FirebaseStorage */,
+			);
 			productName = Telar;
 			productReference = CD68F52B287F56CB001781DB /* Telar.app */;
 			productType = "com.apple.product-type.application";
@@ -175,6 +250,9 @@
 				Base,
 			);
 			mainGroup = CD68F522287F56CB001781DB;
+			packageReferences = (
+				CDB12F8928805F6900159B4D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CD68F52C287F56CB001781DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,6 +272,7 @@
 				CD68F537287F56CD001781DB /* Preview Assets.xcassets in Resources */,
 				CD68F533287F56CD001781DB /* Assets.xcassets in Resources */,
 				CD68F546287F5B59001781DB /* LexendDeca-Bold.ttf in Resources */,
+				CDB12F8828805E3600159B4D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +283,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5A14A5288596F500EA2C61 /* CreateProfileTextfieldStyle.swift in Sources */,
+				CDB12F952880625600159B4D /* AppDelegate.swift in Sources */,
+				CDB12F9A2880B10900159B4D /* OnboardingContainerView.swift in Sources */,
+				CDA05DF92881A50B000CF80B /* SyncContactView.swift in Sources */,
+				CDB12F842880508B00159B4D /* CustomTabBar.swift in Sources */,
+				CDA05DFB2881ABB4000CF80B /* OnboardingButtonStyle.swift in Sources */,
 				CD68F531287F56CB001781DB /* RootView.swift in Sources */,
+				CDA05DF12881A4D2000CF80B /* WelcomeView.swift in Sources */,
+				CDB12F972880A99A00159B4D /* AuthViewModel.swift in Sources */,
+				CDA05DF72881A4F9000CF80B /* CreateProfileView.swift in Sources */,
+				CDA05DF32881A4E0000CF80B /* PhoneNumberView.swift in Sources */,
 				CD68F54B287F5E0B001781DB /* Fonts.swift in Sources */,
+				CDA05DF52881A4EA000CF80B /* VerificationView.swift in Sources */,
+				CDAB7615288D4D6300056A23 /* ContactsViewModel.swift in Sources */,
+				CDB12F862880565C00159B4D /* TabBarButton.swift in Sources */,
 				CD68F52F287F56CB001781DB /* TelarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +428,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "DY-Support";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -373,6 +466,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "DY-Support";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -418,6 +512,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDB12F8928805F6900159B4D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDB12F8A28805F6900159B4D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDB12F8928805F6900159B4D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CDB12F8C28805F6900159B4D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDB12F8928805F6900159B4D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CDB12F8E28805F6900159B4D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDB12F8928805F6900159B4D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CDB12F9028805F6900159B4D /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDB12F8928805F6900159B4D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		CDB12F9228805F6900159B4D /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDB12F8928805F6900159B4D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD68F523287F56CB001781DB /* Project object */;
 }
