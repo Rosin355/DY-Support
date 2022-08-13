@@ -42,7 +42,7 @@ struct OnboardingContainerView: View {
                     CreateProfileView(currentStep: $currentStep)
                     
                 case .contacts:
-                    SyncContactView(isOnboarding: $isOnboarding)
+                    SyncContactsView(isOnboarding: $isOnboarding)
             }
         }
     }

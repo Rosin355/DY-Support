@@ -16,11 +16,15 @@
 		CD68F547287F5B59001781DB /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F544287F5B59001781DB /* LexendDeca-SemiBold.ttf */; };
 		CD68F548287F5B59001781DB /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */; };
 		CD68F54B287F5E0B001781DB /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F54A287F5E0B001781DB /* Fonts.swift */; };
+		CD928CCC28A40992005A97A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928CCB28A40992005A97A6 /* User.swift */; };
+		CD928CCE28A455A1005A97A6 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928CCD28A455A1005A97A6 /* DatabaseService.swift */; };
+		CD928CD028A456A3005A97A6 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928CCF28A456A3005A97A6 /* TextHelper.swift */; };
+		CD9FB54228A540540056BFBE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9FB54128A540540056BFBE /* ImagePicker.swift */; };
 		CDA05DF12881A4D2000CF80B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF02881A4D2000CF80B /* WelcomeView.swift */; };
 		CDA05DF32881A4E0000CF80B /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF22881A4E0000CF80B /* PhoneNumberView.swift */; };
 		CDA05DF52881A4EA000CF80B /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF42881A4EA000CF80B /* VerificationView.swift */; };
 		CDA05DF72881A4F9000CF80B /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF62881A4F9000CF80B /* CreateProfileView.swift */; };
-		CDA05DF92881A50B000CF80B /* SyncContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF82881A50B000CF80B /* SyncContactView.swift */; };
+		CDA05DF92881A50B000CF80B /* SyncContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DF82881A50B000CF80B /* SyncContactsView.swift */; };
 		CDA05DFB2881ABB4000CF80B /* OnboardingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA05DFA2881ABB4000CF80B /* OnboardingButtonStyle.swift */; };
 		CDAB7615288D4D6300056A23 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB7614288D4D6300056A23 /* ContactsViewModel.swift */; };
 		CDB12F842880508B00159B4D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F832880508B00159B4D /* CustomTabBar.swift */; };
@@ -49,11 +53,15 @@
 		CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		CD68F549287F5C38001781DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CD68F54A287F5E0B001781DB /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		CD928CCB28A40992005A97A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CD928CCD28A455A1005A97A6 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		CD928CCF28A456A3005A97A6 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		CD9FB54128A540540056BFBE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CDA05DF02881A4D2000CF80B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		CDA05DF22881A4E0000CF80B /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		CDA05DF42881A4EA000CF80B /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		CDA05DF62881A4F9000CF80B /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
-		CDA05DF82881A50B000CF80B /* SyncContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContactView.swift; sourceTree = "<group>"; };
+		CDA05DF82881A50B000CF80B /* SyncContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContactsView.swift; sourceTree = "<group>"; };
 		CDA05DFA2881ABB4000CF80B /* OnboardingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonStyle.swift; sourceTree = "<group>"; };
 		CDAB7614288D4D6300056A23 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		CDB12F832880508B00159B4D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -127,8 +135,8 @@
 		CD68F53D287F574A001781DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CDB12F982880B0C700159B4D /* Onboarding */,
 				CD68F530287F56CB001781DB /* RootView.swift */,
+				CDB12F982880B0C700159B4D /* Onboarding */,
 				CDB12F822880504700159B4D /* Custom TabBar */,
 			);
 			path = Views;
@@ -146,6 +154,7 @@
 		CD68F53F287F576E001781DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CD928CCB28A40992005A97A6 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +162,7 @@
 		CD68F540287F5775001781DB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CD928CCD28A455A1005A97A6 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 				CD68F54A287F5E0B001781DB /* Fonts.swift */,
 				CDA05DFA2881ABB4000CF80B /* OnboardingButtonStyle.swift */,
 				CD5A14A4288596F500EA2C61 /* CreateProfileTextfieldStyle.swift */,
+				CD928CCF28A456A3005A97A6 /* TextHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -194,7 +205,8 @@
 				CDA05DF22881A4E0000CF80B /* PhoneNumberView.swift */,
 				CDA05DF42881A4EA000CF80B /* VerificationView.swift */,
 				CDA05DF62881A4F9000CF80B /* CreateProfileView.swift */,
-				CDA05DF82881A50B000CF80B /* SyncContactView.swift */,
+				CDA05DF82881A50B000CF80B /* SyncContactsView.swift */,
+				CD9FB54128A540540056BFBE /* ImagePicker.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -283,13 +295,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD928CCE28A455A1005A97A6 /* DatabaseService.swift in Sources */,
 				CD5A14A5288596F500EA2C61 /* CreateProfileTextfieldStyle.swift in Sources */,
 				CDB12F952880625600159B4D /* AppDelegate.swift in Sources */,
 				CDB12F9A2880B10900159B4D /* OnboardingContainerView.swift in Sources */,
-				CDA05DF92881A50B000CF80B /* SyncContactView.swift in Sources */,
+				CD928CD028A456A3005A97A6 /* TextHelper.swift in Sources */,
+				CDA05DF92881A50B000CF80B /* SyncContactsView.swift in Sources */,
 				CDB12F842880508B00159B4D /* CustomTabBar.swift in Sources */,
 				CDA05DFB2881ABB4000CF80B /* OnboardingButtonStyle.swift in Sources */,
 				CD68F531287F56CB001781DB /* RootView.swift in Sources */,
+				CD928CCC28A40992005A97A6 /* User.swift in Sources */,
 				CDA05DF12881A4D2000CF80B /* WelcomeView.swift in Sources */,
 				CDB12F972880A99A00159B4D /* AuthViewModel.swift in Sources */,
 				CDA05DF72881A4F9000CF80B /* CreateProfileView.swift in Sources */,
@@ -297,6 +312,7 @@
 				CD68F54B287F5E0B001781DB /* Fonts.swift in Sources */,
 				CDA05DF52881A4EA000CF80B /* VerificationView.swift in Sources */,
 				CDAB7615288D4D6300056A23 /* ContactsViewModel.swift in Sources */,
+				CD9FB54228A540540056BFBE /* ImagePicker.swift in Sources */,
 				CDB12F862880565C00159B4D /* TabBarButton.swift in Sources */,
 				CD68F52F287F56CB001781DB /* TelarApp.swift in Sources */,
 			);

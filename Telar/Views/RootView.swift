@@ -15,7 +15,7 @@ struct RootView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-            Text("TELAIO CHAT!")
+            Text("DY-CHAT!")
                 .padding()
                 .font(Font.chatHeading)
             
