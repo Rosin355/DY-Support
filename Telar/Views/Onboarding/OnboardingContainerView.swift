@@ -36,7 +36,7 @@ struct OnboardingContainerView: View {
                     PhoneNumberView(currentStep: $currentStep)
                 
                 case .verification:
-                    VerificationView(currentStep: $currentStep)
+                    VerificationView(currentStep: $currentStep, isOnboarding: $isOnboarding)
                     
                 case .profile:
                     CreateProfileView(currentStep: $currentStep)
@@ -53,3 +53,4 @@ struct OnboardingContainerView_Previews: PreviewProvider {
         OnboardingContainerView(isOnboarding: .constant(true))
     }
 }
+

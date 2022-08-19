@@ -14,27 +14,35 @@ struct RootView: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack {
-            Text("DY-CHAT!")
-                .padding()
-                .font(Font.chatHeading)
+        ZStack {
+            Color("background")
+                .ignoresSafeArea()
             
-            Spacer()
-            
-            CustomTabBar(selectedTab: $selectedTab)
-        }
-        .fullScreenCover(isPresented: $isOnboarding) {
-            // On dismmis
-        } content: {
-            // The onboarding sequence
-            OnboardingContainerView(isOnboarding: $isOnboarding)
+            VStack {
+                switch selectedTab {
+                    case .chats:
+                        ChatsListView()
+                    case .contacts:
+                        ContactsListView()
+                }
+                
+                Spacer()
+                
+                CustomTabBar(selectedTab: $selectedTab)
+            }
+            .fullScreenCover(isPresented: $isOnboarding) {
+                // On dismmis
+            } content: {
+                // The onboarding sequence
+                OnboardingContainerView(isOnboarding: $isOnboarding)
+            }
         }
     }
-}
-
-// MARK: - PREVIEWS
-struct RootView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootView()
+    
+    // MARK: - PREVIEWS
+    struct RootView_Previews: PreviewProvider {
+        static var previews: some View {
+            RootView()
+        }
     }
 }

@@ -11,6 +11,7 @@ import Combine
 struct VerificationView: View {
     // MARK: - PROPERTIES
     @Binding var currentStep: OnboardingStep
+    @Binding var isOnboarding: Bool
     
     @State var verificationcode = ""
     
@@ -23,7 +24,7 @@ struct VerificationView: View {
                 .font(Font.titleText)
                 .padding(.top, 52)
             
-            Text("Inserisci il codice di verifica a 6 cifre che abbiamo inviato al tuo dispositivo.")
+            Text("Enter the 6-digit verification code we sent to your device.")
                 .font(Font.bodyParagraph)
                 .padding(.top, 12)
             
@@ -70,22 +71,34 @@ struct VerificationView: View {
                     // Check for errors
                     if error == nil {
                         
-                        // Move to the next step
-                        currentStep = .profile
+                        // Check if this user has a profile
+                        DatabaseService().checkUserProfile { exists in
+                            
+                            if exists {
+                                // End the onboarding
+                               isOnboarding = false
+                            }
+                            else {
+                                // Move to the profile creation step
+                                currentStep = .profile
+                            }
+                        }
                     }
                     else {
                         // TODO: Show error message
                     }
                 }
                 
+                
+                
             } label: {
-                Text("Prossimo")
+                Text("Next")
             }
             .buttonStyle(OnboardingButtonStyle())
             .padding(.bottom, 87)
 
             
-        } // VSTACk
+        } // VSTACK
         .padding(.horizontal)
     }
 }
@@ -93,6 +106,6 @@ struct VerificationView: View {
 // MARK: - PREVIEWS
 struct VerificationView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationView(currentStep: .constant(.verification))
+        VerificationView(currentStep: .constant(.verification), isOnboarding: .constant(true))
     }
 }

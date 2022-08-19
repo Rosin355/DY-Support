@@ -81,6 +81,8 @@ struct CreateProfileView: View {
             
             Button {
                 
+                // TODO: check the user filled the forms 
+                
                 // Prevent double taps
                 isSaveButtonDisabled = true
                 

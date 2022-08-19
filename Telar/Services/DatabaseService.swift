@@ -80,16 +80,23 @@ class DatabaseService {
     
     func setUserProfile(firstName: String, lastName: String, image: UIImage?, completion: @escaping (Bool) -> Void) {
         
-        // TODO: Guard against logged out users
+        // Ensure that the user is logged in
+        guard AuthViewModel.isUserLoggedIn() != false else {
+            // User is not logged in
+            return
+        }
+        
+        // Get user's phone number
+        let userPhone = TextHelper.sanitizePhoneNumber(AuthViewModel.getLoggedUserPhone())
         
         // Get a reference to Firestore
         let db = Firestore.firestore()
         
         // Set the profile data
-        // TODO: After implementing authentication, instead create a document with the actual user's id
-        let doc = db.collection("users").document()
+        let doc = db.collection("users").document(AuthViewModel.getLoggedInUserId())
         doc.setData(["firstname": firstName,
-                     "lastname": lastName])
+                     "lastname": lastName,
+                     "phone": userPhone])
         
         // Check if an image is passed through
         if let image = image {
@@ -113,13 +120,29 @@ class DatabaseService {
                 
                 if error == nil && meta != nil
                 {
-                    // Set that image path to the profile
-                    doc.setData(["photo": path], merge: true) { error in
-                        if error == nil {
-                            // Success, notify caller
-                            completion(true)
+                    // Get full url to image
+                    fileRef.downloadURL { url, error in
+                        
+                        // Check for errors
+                        if url != nil && error == nil {
+                            
+                            // Set that image path to the profile
+                            doc.setData(["photo": url!.absoluteString], merge: true) { error in
+                                
+                                if error == nil {
+                                    // Success, notify caller
+                                    completion(true)
+                                }
+                            }
+                            
+                        }
+                        else {
+                            // Wasn't successful in getting download url for photo
+                            completion(false)
                         }
                     }
+                    
+                    
                 }
                 else {
                     
@@ -127,6 +150,40 @@ class DatabaseService {
                     completion(false)
                 }
             }
+            
+            
         }
+        else {
+            // No image was set
+            completion(true)
+        }
+        
+    }
+    
+    func checkUserProfile(completion: @escaping (Bool) -> Void) {
+        
+        // Check that the user is logged
+        guard AuthViewModel.isUserLoggedIn() != false else {
+            return
+        }
+        
+        // Create firebase ref
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(AuthViewModel.getLoggedInUserId()).getDocument { snapshot, error in
+            
+            // TODO: Keep the users profile data
+            if snapshot != nil && error == nil {
+                
+                // Notify that profile exists
+                completion(snapshot!.exists)
+            }
+            else {
+                // TODO: Look into using Result type to indicate failure vs profile exists
+                completion(false)
+            }
+            
+        }
+        
     }
 }
