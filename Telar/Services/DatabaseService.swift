@@ -45,25 +45,70 @@ class DatabaseService {
             // Remove the < 10 that we're looking up
             lookupPhoneNumbers = Array(lookupPhoneNumbers.dropFirst(10))
             
+            let query2 = db.collection("users")
+            query2.getDocuments { snapshot, error in
+                
+                if error == nil && snapshot != nil {
+                    
+                    // Create a for loop to iterate through all the documents in the 'users' collection
+                    for doc in snapshot!.documents {
+                        
+                        // Create a reference to the users
+                        let userRef = db.collection("users").document(doc.documentID)
+                        userRef.getDocument { document, error in
+                            
+                            // Check if the document exists
+                            if let document = document, document.exists {
+                                let data = document.data()
+                                
+                                // Create a for loop to iterate through the users
+                                for (key, value) in data! {
+                                    if key == "phone" {
+                                        
+                                        if tenPhoneNumbers.contains(value as! String) {
+            
+                                            if let user = try? document.data(as: User.self) {
+                                                
+                                                // Append to the platform users array
+                                                platformUsers.append(user)
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                if lookupPhoneNumbers.isEmpty {
+                                    // Return these users
+                                    completion(platformUsers)
+                                }
+                            } else {
+                                print("Document does not exist")
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            /*
             // Look up the first 10
             let query = db.collection("users").whereField("phone", in: tenPhoneNumbers)
         
             // Retrieve the users that are on the platform
             query.getDocuments { snapshot, error in
-                
+
                 // Check for errors
                 if error == nil && snapshot != nil {
-                    
+
                     // For each doc that was fetched, create a user
                     for doc in snapshot!.documents {
-                        
+
                         if let user = try? doc.data(as: User.self) {
-                            
+
                             // Append to the platform users array
                             platformUsers.append(user)
                         }
                     }
-                    
+
                     // Check if we have anymore phone numbers to look up
                     // If not, we can call the completion block and we're done
                     if lookupPhoneNumbers.isEmpty {
@@ -71,11 +116,8 @@ class DatabaseService {
                         completion(platformUsers)
                     }
                 }
-            }
+            } */
         }
-        
-        
-        
     }
     
     func setUserProfile(firstName: String, lastName: String, image: UIImage?, completion: @escaping (Bool) -> Void) {
