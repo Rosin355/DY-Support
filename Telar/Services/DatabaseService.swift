@@ -36,9 +36,12 @@ class DatabaseService {
         // Query the database for these phone numbers
         let db = Firestore.firestore()
         
+        // Remove duplicate values from the array
+        lookupPhoneNumbers = Array(Set(lookupPhoneNumbers))
+        
         // Perform queries while we still have phone numbers to look up
         while !lookupPhoneNumbers.isEmpty {
-        
+            
             // Get the first < 10 phone numbers to look up
             let tenPhoneNumbers = Array(lookupPhoneNumbers.prefix(10))
             
@@ -66,7 +69,6 @@ class DatabaseService {
                                     if key == "phone" {
                                         
                                         if tenPhoneNumbers.contains(value as! String) {
-            
                                             if let user = try? document.data(as: User.self) {
                                                 
                                                 // Append to the platform users array
@@ -75,13 +77,16 @@ class DatabaseService {
                                         }
                                     }
                                 }
-                                
-                                if lookupPhoneNumbers.isEmpty {
-                                    // Return these users
-                                    completion(platformUsers)
-                                }
                             } else {
                                 print("Document does not exist")
+                            }
+                            
+                            // Check if we have anymore phone numbers to look up
+                            // If not, we can call the completion block and we're done
+                            if lookupPhoneNumbers.isEmpty {
+                                
+                                // Return these users
+                                completion(platformUsers)
                             }
                         }
                     }
