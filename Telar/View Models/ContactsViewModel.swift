@@ -15,9 +15,11 @@ class ContactsViewModel: ObservableObject {
     private var filterText = ""
     @Published var filteredUsers = [User]()
     
-    private var localContacts = [CNContact]()
+//    private var localContacts = [CNContact]()
     
     func getLocalContacts() {
+        
+        var localContacts = [CNContact]()
         
         // Perform the contact store method asynchronously so it doesn't block the UI
         DispatchQueue.init(label: "getcontacts").async {
@@ -39,12 +41,12 @@ class ContactsViewModel: ObservableObject {
                 try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, success in
                     
                     // Do something with the contact
-                    self.localContacts.append(contact)
+                    localContacts.append(contact)
                     
                 })
                 
                 // See which local contacts are actually users of this app
-                DatabaseService().getPlatformUsers(localContacts: self.localContacts) { platformUsers in
+                DatabaseService().getPlatformUsers(localContacts: localContacts) { platformUsers in
                     
                     // Update the UI in the main thread
                     DispatchQueue.main.async {

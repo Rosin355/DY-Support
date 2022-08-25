@@ -36,9 +36,6 @@ class DatabaseService {
         // Query the database for these phone numbers
         let db = Firestore.firestore()
         
-        // Remove duplicate values from the array
-        lookupPhoneNumbers = Array(Set(lookupPhoneNumbers))
-        
         // Perform queries while we still have phone numbers to look up
         while !lookupPhoneNumbers.isEmpty {
             
