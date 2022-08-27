@@ -38,6 +38,10 @@
 		CDB12F952880625600159B4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F942880625600159B4D /* AppDelegate.swift */; };
 		CDB12F972880A99A00159B4D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F962880A99A00159B4D /* AuthViewModel.swift */; };
 		CDB12F9A2880B10900159B4D /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB12F992880B10900159B4D /* OnboardingContainerView.swift */; };
+		CDB6A77728B9136600AE94A0 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77628B9136600AE94A0 /* ConversationView.swift */; };
+		CDB6A77A28B9153500AE94A0 /* ProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77928B9153500AE94A0 /* ProfilePicView.swift */; };
+		CDB6A77C28BA689A00AE94A0 /* RoundedCornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77B28BA689A00AE94A0 /* RoundedCornerExtension.swift */; };
+		CDB6A77E28BAA37B00AE94A0 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77D28BAA37B00AE94A0 /* Chat.swift */; };
 		CDBEDACD28AD38A20062CCD4 /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */; };
 		CDBEDACF28AD38AE0062CCD4 /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDACE28AD38AE0062CCD4 /* ContactsListView.swift */; };
 		CDBEDAD128AE81130062CCD4 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDAD028AE81130062CCD4 /* ContactRow.swift */; };
@@ -73,6 +77,10 @@
 		CDB12F942880625600159B4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDB12F962880A99A00159B4D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CDB12F992880B10900159B4D /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		CDB6A77628B9136600AE94A0 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		CDB6A77928B9153500AE94A0 /* ProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicView.swift; sourceTree = "<group>"; };
+		CDB6A77B28BA689A00AE94A0 /* RoundedCornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerExtension.swift; sourceTree = "<group>"; };
+		CDB6A77D28BAA37B00AE94A0 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
 		CDBEDACE28AD38AE0062CCD4 /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
 		CDBEDAD028AE81130062CCD4 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 				CDBEDACB28AD388A0062CCD4 /* Contacts View */,
 				CDBEDACA28AD38820062CCD4 /* Chats View */,
 				CDB12F822880504700159B4D /* Custom TabBar */,
+				CDB6A77828B9150F00AE94A0 /* Misc */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				CD928CCB28A40992005A97A6 /* User.swift */,
+				CDB6A77D28BAA37B00AE94A0 /* Chat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +192,7 @@
 				CDA05DFA2881ABB4000CF80B /* OnboardingButtonStyle.swift */,
 				CD5A14A4288596F500EA2C61 /* CreateProfileTextfieldStyle.swift */,
 				CD928CCF28A456A3005A97A6 /* TextHelper.swift */,
+				CDB6A77B28BA689A00AE94A0 /* RoundedCornerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -219,10 +230,19 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		CDB6A77828B9150F00AE94A0 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				CDB6A77928B9153500AE94A0 /* ProfilePicView.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		CDBEDACA28AD38820062CCD4 /* Chats View */ = {
 			isa = PBXGroup;
 			children = (
 				CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */,
+				CDB6A77628B9136600AE94A0 /* ConversationView.swift */,
 			);
 			path = "Chats View";
 			sourceTree = "<group>";
@@ -342,7 +362,11 @@
 				CDAB7615288D4D6300056A23 /* ContactsViewModel.swift in Sources */,
 				CD9FB54228A540540056BFBE /* ImagePicker.swift in Sources */,
 				CDB12F862880565C00159B4D /* TabBarButton.swift in Sources */,
+				CDB6A77E28BAA37B00AE94A0 /* Chat.swift in Sources */,
+				CDB6A77C28BA689A00AE94A0 /* RoundedCornerExtension.swift in Sources */,
 				CD68F52F287F56CB001781DB /* TelarApp.swift in Sources */,
+				CDB6A77A28B9153500AE94A0 /* ProfilePicView.swift in Sources */,
+				CDB6A77728B9136600AE94A0 /* ConversationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

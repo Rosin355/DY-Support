@@ -11,6 +11,7 @@ struct RootView: View {
     // MARK: - PROPERTIES
     @State var selectedTab: Tabs = .contacts
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
+    @State var isChatShowing = false
     
     // MARK: - BODY
     var body: some View {
@@ -23,7 +24,7 @@ struct RootView: View {
                     case .chats:
                         ChatsListView()
                     case .contacts:
-                        ContactsListView()
+                        ContactsListView(isChatShowing: $isChatShowing)
                 }
                 
                 Spacer()
@@ -35,6 +36,10 @@ struct RootView: View {
             } content: {
                 // The onboarding sequence
                 OnboardingContainerView(isOnboarding: $isOnboarding)
+            }
+            .fullScreenCover(isPresented: $isChatShowing, onDismiss: nil) {
+                // conversation view
+                ConversationView(isChatSwowing: $isChatShowing)
             }
         }
     }
