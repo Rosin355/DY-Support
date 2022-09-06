@@ -42,6 +42,7 @@
 		CDB6A77A28B9153500AE94A0 /* ProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77928B9153500AE94A0 /* ProfilePicView.swift */; };
 		CDB6A77C28BA689A00AE94A0 /* RoundedCornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77B28BA689A00AE94A0 /* RoundedCornerExtension.swift */; };
 		CDB6A77E28BAA37B00AE94A0 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77D28BAA37B00AE94A0 /* Chat.swift */; };
+		CDB6A78028BBB31200AE94A0 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6A77F28BBB31200AE94A0 /* ChatViewModel.swift */; };
 		CDBEDACD28AD38A20062CCD4 /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */; };
 		CDBEDACF28AD38AE0062CCD4 /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDACE28AD38AE0062CCD4 /* ContactsListView.swift */; };
 		CDBEDAD128AE81130062CCD4 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDAD028AE81130062CCD4 /* ContactRow.swift */; };
@@ -81,6 +82,7 @@
 		CDB6A77928B9153500AE94A0 /* ProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicView.swift; sourceTree = "<group>"; };
 		CDB6A77B28BA689A00AE94A0 /* RoundedCornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerExtension.swift; sourceTree = "<group>"; };
 		CDB6A77D28BAA37B00AE94A0 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		CDB6A77F28BBB31200AE94A0 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
 		CDBEDACE28AD38AE0062CCD4 /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
 		CDBEDAD028AE81130062CCD4 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				CDB12F962880A99A00159B4D /* AuthViewModel.swift */,
 				CDAB7614288D4D6300056A23 /* ContactsViewModel.swift */,
+				CDB6A77F28BBB31200AE94A0 /* ChatViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				CDAB7615288D4D6300056A23 /* ContactsViewModel.swift in Sources */,
 				CD9FB54228A540540056BFBE /* ImagePicker.swift in Sources */,
 				CDB12F862880565C00159B4D /* TabBarButton.swift in Sources */,
+				CDB6A78028BBB31200AE94A0 /* ChatViewModel.swift in Sources */,
 				CDB6A77E28BAA37B00AE94A0 /* Chat.swift in Sources */,
 				CDB6A77C28BA689A00AE94A0 /* RoundedCornerExtension.swift in Sources */,
 				CD68F52F287F56CB001781DB /* TelarApp.swift in Sources */,
