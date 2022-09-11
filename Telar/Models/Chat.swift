@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Chat: Codable {
+struct Chat: Codable, Identifiable {
     
     @DocumentID var id: String?
     
@@ -22,12 +22,12 @@ struct Chat: Codable {
     var msgs: [ChatMessage]?
 }
 
-struct ChatMessage: Codable {
+struct ChatMessage: Codable, Identifiable {
     
     @DocumentID var id: String?
     
     var imageurl: String?
-    var msg: String?
+    var msg: String
     
     @ServerTimestamp var timestamp: Date?
     

@@ -92,33 +92,33 @@ class DatabaseService {
             
             
             /*
-            // Look up the first 10
-            let query = db.collection("users").whereField("phone", in: tenPhoneNumbers)
-        
-            // Retrieve the users that are on the platform
-            query.getDocuments { snapshot, error in
-
-                // Check for errors
-                if error == nil && snapshot != nil {
-
-                    // For each doc that was fetched, create a user
-                    for doc in snapshot!.documents {
-
-                        if let user = try? doc.data(as: User.self) {
-
-                            // Append to the platform users array
-                            platformUsers.append(user)
-                        }
-                    }
-
-                    // Check if we have anymore phone numbers to look up
-                    // If not, we can call the completion block and we're done
-                    if lookupPhoneNumbers.isEmpty {
-                        // Return these users
-                        completion(platformUsers)
-                    }
-                }
-            } */
+             // Look up the first 10
+             let query = db.collection("users").whereField("phone", in: tenPhoneNumbers)
+             
+             // Retrieve the users that are on the platform
+             query.getDocuments { snapshot, error in
+             
+             // Check for errors
+             if error == nil && snapshot != nil {
+             
+             // For each doc that was fetched, create a user
+             for doc in snapshot!.documents {
+             
+             if let user = try? doc.data(as: User.self) {
+             
+             // Append to the platform users array
+             platformUsers.append(user)
+             }
+             }
+             
+             // Check if we have anymore phone numbers to look up
+             // If not, we can call the completion block and we're done
+             if lookupPhoneNumbers.isEmpty {
+             // Return these users
+             completion(platformUsers)
+             }
+             }
+             } */
         }
     }
     
@@ -144,7 +144,7 @@ class DatabaseService {
         
         // Check if an image is passed through
         if let image = image {
-        
+            
             // Create storage reference
             let storageRef = Storage.storage().reference()
             
@@ -229,5 +229,113 @@ class DatabaseService {
             
         }
         
+    }
+    
+    
+    // MARK: - Chat Methods
+    
+    /// This method returns all chat documents where the logged in user is a participant
+    func getAllChats(completion: @escaping ([Chat]) -> Void) {
+        
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Perform a query against the chat collection for any chats where the user is a participant
+        let chatsQuery = db.collection("chats")
+            .whereField("participantids",
+                        arrayContains: AuthViewModel.getLoggedInUserId())
+        
+        chatsQuery.getDocuments { snapshot, error in
+            
+            if snapshot != nil && error == nil {
+                
+                var chats = [Chat]()
+                
+                // Loop through all the returned chat docs
+                for doc in snapshot!.documents {
+                    
+                    // Parse the data into Chat structs
+                    let chat = try? doc.data(as: Chat.self)
+                    
+                    // Add the chat into the array
+                    if let chat = chat {
+                        chats.append(chat)
+                    }
+                }
+                
+                // Return the data
+                completion(chats)
+            }
+            else {
+                print("Error in database retrieval")
+            }
+        }
+    }
+    
+    /// This method returns all messages for a given chat
+    func getAllMessages(chat: Chat, completion: @escaping ([ChatMessage]) -> Void) {
+        
+        // Check that the id is not nil
+        guard chat.id != nil else {
+            // Can't fetch data
+            completion([ChatMessage]())
+            return
+        }
+        
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Create the query
+        let msgsQuery = db.collection("chats")
+            .document(chat.id!)
+            .collection("msgs")
+            .order(by: "timestamp")
+        
+        // Perform the query
+        msgsQuery.getDocuments { snapshot, error in
+            
+            if snapshot != nil && error == nil {
+                
+                // Loop through the msg documents and create ChatMessage instances
+                var messages = [ChatMessage]()
+                
+                for doc in snapshot!.documents {
+                    
+                    let msg = try? doc.data(as: ChatMessage.self)
+                    
+                    if let msg = msg {
+                        messages.append(msg)
+                    }
+                }
+                
+                // Return the results
+                completion(messages)
+            }
+            else {
+                print("Error in database retrieval")
+            }
+            
+        }
+    }
+    
+    /// Send a message to the database
+    func sendMessage(msg: String, chat: Chat) {
+        
+        // Check that it's a valid chat
+        guard chat.id != nil else {
+            return
+        }
+        
+        // Get reference to database
+        let db = Firestore.firestore()
+        
+        // Add msg document
+        db.collection("chats")
+            .document(chat.id!)
+            .collection("msgs")
+            .addDocument(data: ["imageurl": "",
+                                "msg": msg,
+                                "senderid": AuthViewModel.getLoggedInUserId(),
+                                "timestamp": Date()])
     }
 }
