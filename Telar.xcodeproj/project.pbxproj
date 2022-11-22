@@ -16,6 +16,7 @@
 		CD68F547287F5B59001781DB /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F544287F5B59001781DB /* LexendDeca-SemiBold.ttf */; };
 		CD68F548287F5B59001781DB /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */; };
 		CD68F54B287F5E0B001781DB /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68F54A287F5E0B001781DB /* Fonts.swift */; };
+		CD78E7662906A03800FC83C6 /* ChatListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78E7652906A03800FC83C6 /* ChatListRow.swift */; };
 		CD928CCC28A40992005A97A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928CCB28A40992005A97A6 /* User.swift */; };
 		CD928CCE28A455A1005A97A6 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928CCD28A455A1005A97A6 /* DatabaseService.swift */; };
 		CD928CD028A456A3005A97A6 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928CCF28A456A3005A97A6 /* TextHelper.swift */; };
@@ -46,6 +47,7 @@
 		CDBEDACD28AD38A20062CCD4 /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */; };
 		CDBEDACF28AD38AE0062CCD4 /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDACE28AD38AE0062CCD4 /* ContactsListView.swift */; };
 		CDBEDAD128AE81130062CCD4 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEDAD028AE81130062CCD4 /* ContactRow.swift */; };
+		CDF3865828CE5D7200F1747B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3865728CE5D7200F1747B /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,7 @@
 		CD68F545287F5B59001781DB /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		CD68F549287F5C38001781DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CD68F54A287F5E0B001781DB /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		CD78E7652906A03800FC83C6 /* ChatListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRow.swift; sourceTree = "<group>"; };
 		CD928CCB28A40992005A97A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CD928CCD28A455A1005A97A6 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		CD928CCF28A456A3005A97A6 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
 		CDBEDACE28AD38AE0062CCD4 /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
 		CDBEDAD028AE81130062CCD4 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		CDF3865728CE5D7200F1747B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 				CD5A14A4288596F500EA2C61 /* CreateProfileTextfieldStyle.swift */,
 				CD928CCF28A456A3005A97A6 /* TextHelper.swift */,
 				CDB6A77B28BA689A00AE94A0 /* RoundedCornerExtension.swift */,
+				CDF3865728CE5D7200F1747B /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			children = (
 				CDBEDACC28AD38A20062CCD4 /* ChatsListView.swift */,
 				CDB6A77628B9136600AE94A0 /* ConversationView.swift */,
+				CD78E7652906A03800FC83C6 /* ChatListRow.swift */,
 			);
 			path = "Chats View";
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 				CD928CCE28A455A1005A97A6 /* DatabaseService.swift in Sources */,
 				CD5A14A5288596F500EA2C61 /* CreateProfileTextfieldStyle.swift in Sources */,
 				CDB12F952880625600159B4D /* AppDelegate.swift in Sources */,
+				CDF3865828CE5D7200F1747B /* DateHelper.swift in Sources */,
 				CDB12F9A2880B10900159B4D /* OnboardingContainerView.swift in Sources */,
 				CD928CD028A456A3005A97A6 /* TextHelper.swift in Sources */,
 				CDA05DF92881A50B000CF80B /* SyncContactsView.swift in Sources */,
@@ -354,6 +361,7 @@
 				CD68F531287F56CB001781DB /* RootView.swift in Sources */,
 				CD928CCC28A40992005A97A6 /* User.swift in Sources */,
 				CDA05DF12881A4D2000CF80B /* WelcomeView.swift in Sources */,
+				CD78E7662906A03800FC83C6 /* ChatListRow.swift in Sources */,
 				CDB12F972880A99A00159B4D /* AuthViewModel.swift in Sources */,
 				CDA05DF72881A4F9000CF80B /* CreateProfileView.swift in Sources */,
 				CDA05DF32881A4E0000CF80B /* PhoneNumberView.swift in Sources */,
@@ -501,6 +509,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "DY-Support";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Sync your contacts to chat with them";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -508,7 +518,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -539,6 +549,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "DY-Support";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Sync your contacts to chat with them";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -546,7 +558,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

@@ -11,10 +11,12 @@ struct ConversationView: View {
     // MARK: - PROPERTIES
     
     @EnvironmentObject var chatViewModel: ChatViewModel
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
     
     @Binding var isChatSwowing: Bool
     
     @State var chatMessage = ""
+    @State var participants = [User]()
     
     // MARK: - BODY
     var body: some View {
@@ -37,17 +39,27 @@ struct ConversationView: View {
                     .padding(.bottom, 16)
 
                     // Name
-                    Text("Romesh Singhabahu")
-                        .font(Font.chatHeading)
-                        .foregroundColor(Color("text-header"))
-                    
+                    if participants.count > 0 {
+                        
+                        let participant = participants.first
+                        
+                        Text("\(participant?.firstname ?? "") \(participant?.lastname ?? "")")
+                            .font(Font.chatHeading)
+                            .foregroundColor(Color("text-header"))
+                    }
                 } // VSTACK
                 
                 
                 Spacer()
                 
                 // Profile image
-                ProfilePicView(user: User())
+                if participants.count > 0 {
+                    
+                    let participant = participants.first
+                    
+                    ProfilePicView(user: participant!)
+                }
+               
                 
             } // HSTACK
             .frame(height: 104)
@@ -67,7 +79,7 @@ struct ConversationView: View {
                             
                             if isFromUser {
                                 // Timestamp
-                                Text("9:41")
+                                Text(DateHelper.chatTimeStampFrom(date: msg.timestamp))
                                     .font(Font.smallText)
                                     .foregroundColor(Color("text-timestamp"))
                                     .padding(.trailing)
@@ -88,7 +100,7 @@ struct ConversationView: View {
                                 
                                 Spacer()
                                 
-                                Text("9:41")
+                                Text(DateHelper.chatTimeStampFrom(date: msg.timestamp))
                                     .font(Font.smallText)
                                     .foregroundColor(Color("text-timestamp"))
                                     .padding(.leading)
@@ -176,6 +188,10 @@ struct ConversationView: View {
         .onAppear {
             // Call chat view model to retrieve all chat messages
             chatViewModel.getMessages()
+            
+            // Try to get the other participants as User instances
+            let ids = chatViewModel.getParticipantIDs()
+            self.participants = contactsViewModel.getParticipants(ids: ids)
         }
     }
 }

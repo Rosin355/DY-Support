@@ -38,88 +38,44 @@ class DatabaseService {
         
         // Perform queries while we still have phone numbers to look up
         while !lookupPhoneNumbers.isEmpty {
-            
+        
             // Get the first < 10 phone numbers to look up
             let tenPhoneNumbers = Array(lookupPhoneNumbers.prefix(10))
             
             // Remove the < 10 that we're looking up
             lookupPhoneNumbers = Array(lookupPhoneNumbers.dropFirst(10))
             
-            let query2 = db.collection("users")
-            query2.getDocuments { snapshot, error in
+            // Look up the first 10
+            let query = db.collection("users").whereField("phone", in: tenPhoneNumbers)
+        
+            // Retrieve the users that are on the platform
+            query.getDocuments { snapshot, error in
                 
+                // Check for errors
                 if error == nil && snapshot != nil {
                     
-                    // Create a for loop to iterate through all the documents in the 'users' collection
+                    // For each doc that was fetched, create a user
                     for doc in snapshot!.documents {
                         
-                        // Create a reference to the users
-                        let userRef = db.collection("users").document(doc.documentID)
-                        userRef.getDocument { document, error in
+                        if let user = try? doc.data(as: User.self) {
                             
-                            // Check if the document exists
-                            if let document = document, document.exists {
-                                let data = document.data()
-                                
-                                // Create a for loop to iterate through the users
-                                for (key, value) in data! {
-                                    if key == "phone" {
-                                        
-                                        if tenPhoneNumbers.contains(value as! String) {
-                                            if let user = try? document.data(as: User.self) {
-                                                
-                                                // Append to the platform users array
-                                                platformUsers.append(user)
-                                            }
-                                        }
-                                    }
-                                }
-                            } else {
-                                print("Document does not exist")
-                            }
-                            
-                            // Check if we have anymore phone numbers to look up
-                            // If not, we can call the completion block and we're done
-                            if lookupPhoneNumbers.isEmpty {
-                                
-                                // Return these users
-                                completion(platformUsers)
-                            }
+                            // Append to the platform users array
+                            platformUsers.append(user)
                         }
+                    }
+                    
+                    // Check if we have anymore phone numbers to look up
+                    // If not, we can call the completion block and we're done
+                    if lookupPhoneNumbers.isEmpty {
+                        // Return these users
+                        completion(platformUsers)
                     }
                 }
             }
-            
-            
-            /*
-             // Look up the first 10
-             let query = db.collection("users").whereField("phone", in: tenPhoneNumbers)
-             
-             // Retrieve the users that are on the platform
-             query.getDocuments { snapshot, error in
-             
-             // Check for errors
-             if error == nil && snapshot != nil {
-             
-             // For each doc that was fetched, create a user
-             for doc in snapshot!.documents {
-             
-             if let user = try? doc.data(as: User.self) {
-             
-             // Append to the platform users array
-             platformUsers.append(user)
-             }
-             }
-             
-             // Check if we have anymore phone numbers to look up
-             // If not, we can call the completion block and we're done
-             if lookupPhoneNumbers.isEmpty {
-             // Return these users
-             completion(platformUsers)
-             }
-             }
-             } */
         }
+        
+        
+        
     }
     
     func setUserProfile(firstName: String, lastName: String, image: UIImage?, completion: @escaping (Bool) -> Void) {
@@ -144,7 +100,7 @@ class DatabaseService {
         
         // Check if an image is passed through
         if let image = image {
-            
+        
             // Create storage reference
             let storageRef = Storage.storage().reference()
             
@@ -230,8 +186,7 @@ class DatabaseService {
         }
         
     }
-    
-    
+ 
     // MARK: - Chat Methods
     
     /// This method returns all chat documents where the logged in user is a participant
@@ -316,6 +271,12 @@ class DatabaseService {
             }
             
         }
+        
+    
+        
+        
+        
+        
     }
     
     /// Send a message to the database
@@ -325,7 +286,7 @@ class DatabaseService {
         guard chat.id != nil else {
             return
         }
-        
+ 
         // Get reference to database
         let db = Firestore.firestore()
         
@@ -337,5 +298,28 @@ class DatabaseService {
                                 "msg": msg,
                                 "senderid": AuthViewModel.getLoggedInUserId(),
                                 "timestamp": Date()])
+        
+        // Update chat document to reflect msg that was just sent
+        db.collection("chats")
+            .document(chat.id!)
+            .setData(["updated": Date(),
+                      "lastmsg": msg],
+                     merge: true)
+    }
+    
+    func createChat(chat: Chat, completion: @escaping (String) -> Void) {
+        
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Create a document
+        let doc = db.collection("chats").document()
+        
+        // Set the data for the document
+        try? doc.setData(from: chat, completion: { error in
+            
+            // Communicate the document id
+            completion(doc.documentID)
+        })
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct ContactsListView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var contactsViewModel: ContactsViewModel
+    @EnvironmentObject var chatViewModel: ChatViewModel
     @Binding var isChatShowing: Bool
     
     @State var filterText = ""
@@ -17,6 +18,7 @@ struct ContactsListView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
+            // Heading
             HStack {
                 Text("Contacts")
                     .font(Font.pageTitle)
@@ -60,7 +62,10 @@ struct ContactsListView: View {
                 List(contactsViewModel.filteredUsers) { user in
                     
                     Button {
-                        // TODO: Display conversation view
+                        // Search existing conversation with 
+                        chatViewModel.getChatFor(contact: user)
+                        
+                        // Display conversation view
                         isChatShowing = true
                         
                     } label: {
