@@ -33,7 +33,7 @@ struct ChatListRow: View {
                     .font(Font.button)
                     .foregroundColor(Color("text-primary"))
                 
-                // Phone number
+                // Last Message
                 Text(chat.lastmsg ?? "")
                     .font(Font.bodyParagraph)
                     .foregroundColor(Color("text-input"))

@@ -13,6 +13,9 @@ import UIKit
 
 class DatabaseService {
     
+    var chatListViewListeners = [ListenerRegistration]()
+    var conversationViewListeners = [ListenerRegistration]()
+    
     func getPlatformUsers(localContacts: [CNContact], completion: @escaping ([User]) -> Void) {
         
         // The array where we're storing fetched platform users
@@ -200,7 +203,7 @@ class DatabaseService {
             .whereField("participantids",
                         arrayContains: AuthViewModel.getLoggedInUserId())
         
-        chatsQuery.getDocuments { snapshot, error in
+       let listener = chatsQuery.addSnapshotListener { snapshot, error in
             
             if snapshot != nil && error == nil {
                 
@@ -225,6 +228,9 @@ class DatabaseService {
                 print("Error in database retrieval")
             }
         }
+        
+        // Keep track of the listener so we can closer later
+        chatListViewListeners.append(listener)
     }
     
     /// This method returns all messages for a given chat
@@ -247,7 +253,7 @@ class DatabaseService {
             .order(by: "timestamp")
         
         // Perform the query
-        msgsQuery.getDocuments { snapshot, error in
+        let listener = msgsQuery.addSnapshotListener { snapshot, error in
             
             if snapshot != nil && error == nil {
                 
@@ -272,8 +278,8 @@ class DatabaseService {
             
         }
         
-    
-        
+        // Keep track of listener so that we can close it later
+        conversationViewListeners.append(listener)
         
         
         
@@ -321,5 +327,18 @@ class DatabaseService {
             // Communicate the document id
             completion(doc.documentID)
         })
+    }
+    
+    // Methods to close the chat
+    func detachChatListViewListeners() {
+        for listener in chatListViewListeners {
+            listener.remove()
+        }
+    }
+    
+    func detachConversationViewListeners() {
+        for listener in conversationViewListeners {
+            listener.remove()
+        }
     }
 }

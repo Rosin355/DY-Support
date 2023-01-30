@@ -22,7 +22,7 @@ struct Chat: Codable, Identifiable {
     var msgs: [ChatMessage]?
 }
 
-struct ChatMessage: Codable, Identifiable {
+struct ChatMessage: Codable, Identifiable, Hashable {
     
     @DocumentID var id: String?
     
